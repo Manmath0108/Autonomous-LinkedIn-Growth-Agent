@@ -8,36 +8,32 @@ def five_day_plan():
         {
             "day": 1,
             "focus": "conceptual framing",
-            "hook_type": "question",
-            "structure": "explanatory essay",
-            "cta": "Introduce the series"
+            "hook_type": "question_framing",
+            "cta_rule": "neutral_continuation"
         },
         {
             "day": 2,
             "focus": "theoretical depth",
-            "hook_type": "continuation",
-            "structure": "argumentative analysis",
-            "cta": "Tease the next post"
+            "hook_type": "continuation_reference",
+            "cta_rule": "reference_tomorrow"
         },
         {
             "day": 3,
             "focus": "expert perspective",
-            "hook_type": "authority",
-            "structure": "interview / discussion",
-            "cta": "Invite discussion"
+            "hook_type": "authority_framing",
+            "cta_rule": "invite_reflection"
         },
         {
             "day": 4,
-            "focus": "practical breakdown",
-            "hook_type": "list",
-            "structure": "list-based breakdown",
-            "cta": "Encourage reflection"
+            "focus": "practical synthesis",
+            "hook_type": "directive_framing",
+            "cta_rule": "reflective_synthesis"
         },
         {
             "day": 5,
-            "focus": "synthesis & closure",
-            "hook_type": "reflection",
-            "structure": "summary synthesis",
-            "cta": "Close the series"
+            "focus": "closure",
+            "hook_type": "reflective_synthesis",
+            "cta_rule": "definitive_close"
         },
     ]
+    

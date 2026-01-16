@@ -8,11 +8,11 @@ from agents.creator import creator_agent
 from rag.retriever import get_retriever
 
 
-def generate_week(user_profile: dict):
+def generate_week(user_profile: dict, topic: str):
     """
     MVP end-to-end execution:
-    - Runs analysis pipeline once
-    - Generates 5 LinkedIn posts
+    - Runs Auditor + Analyst once
+    - Generates 5 LinkedIn posts using a deterministic 5-day plan
     """
 
     llm = groq_llm()
@@ -22,10 +22,12 @@ def generate_week(user_profile: dict):
 
     initial_state: State = {
         "user_profile": user_profile,
+        "topic": topic,
         "auditor_output": None,
         "analyst_output": None,
     }
 
+    # Run analysis pipeline once
     base_state = app.invoke(initial_state)
 
     memory = WeekMemory()
@@ -40,10 +42,11 @@ def generate_week(user_profile: dict):
             llm=llm,
         )
 
+        # Lightweight variation tracking (MVP)
         memory.mark_used(
-            day_plan["hook_type"],
-            day_plan["structure"],
-            day_plan["focus"],
+            hook_type=day_plan["hook_type"],
+            focus=day_plan["focus"],
+            cta_rule=day_plan["cta_rule"],
         )
 
         posts.append({
@@ -52,3 +55,18 @@ def generate_week(user_profile: dict):
         })
 
     return posts
+
+
+if __name__ == "__main__":
+    user_profile = {
+        "profile_description": "AI Enthuthiast, Knowledgeable in Neural Networks",
+        "expertise": "Transformer Neural Network, Attention Mechanisms",
+        "target_audience": "Students, Undergraduates"
+    }
+
+    posts = generate_week(user_profile, topic="Data Science in Modern AI")
+
+    for p in posts:
+        print(f"\n--- DAY {p['day']} ---\n")
+        print(p["post"])
+        print("\n" + "-" * 50)

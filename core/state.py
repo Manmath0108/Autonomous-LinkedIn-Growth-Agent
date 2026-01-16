@@ -18,6 +18,7 @@ class AnalystOutput(TypedDict):
 
 class State(TypedDict):
     user_profile: UserProfile
+    topic: str
     auditor_output: Optional[AuditorOutput]
     analyst_output: Optional[AnalystOutput]
     creator_output: Optional[str]

@@ -14,5 +14,5 @@ def groq_llm():
         base_url="https://api.groq.com/openai/v1",
         api_key=os.getenv("GROQ_API_KEY"),
         temperature=0.3,
-        max_tokens=1200,
+        max_tokens=3000,
     )
