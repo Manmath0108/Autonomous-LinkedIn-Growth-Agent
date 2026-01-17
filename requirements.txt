@@ -11,3 +11,4 @@ requests
 sentence-transformers
 langchain-huggingface
 faiss-cpu
+streamlit

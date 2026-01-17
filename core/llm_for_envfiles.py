@@ -1,6 +1,9 @@
-import streamlit as st
+import os
+from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
-GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+
+load_dotenv()
+
 def groq_llm():
     """
     Returns a Groq-backed ChatOpenAI-compatible LLM.
@@ -9,7 +12,7 @@ def groq_llm():
     return ChatOpenAI(
         model="openai/gpt-oss-20b",
         base_url="https://api.groq.com/openai/v1",
-        api_key=GROQ_API_KEY,
+        api_key=os.getenv("GROQ_API_KEY"),
         temperature=0.3,
         max_tokens=3000,
     )
