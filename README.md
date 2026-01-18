@@ -45,34 +45,34 @@ Weekly LinkedIn Posts
 ### 🤖 Agents
 
 1. **Auditor Agent**
-Purpose: Strategic extraction
-Reads: User profile
-Writes: Professional niche, content theme, tone
-Does NOT:
-Generate posts
-Use RAG
-Access memory
+* Purpose: Strategic extraction
+* Reads: User profile
+* Writes: Professional niche, content theme, tone
+* Does NOT:
+* Generate posts
+* Use RAG
+* Access memory
 
 2. **Analyst Agent**
-Purpose: Pattern mining via RAG
-Reads: Auditor output
-Writes:
-Hook patterns
-Post structures
-CTA styles
-Keywords
-Uses: Vector store of high-performing LinkedIn posts
-Does NOT: Generate content or strategy
+* Purpose: Pattern mining via RAG
+* Reads: Auditor output
+* Writes:
+1. Hook patterns
+2. Post structures
+3. CTA styles
+4. Keywords
+* Uses: Vector store of high-performing LinkedIn posts
+* Does NOT: Generate content or strategy
 
 3. **Creator Agent**
-Purpose: Controlled content generation
-Reads: Auditor + Analyst outputs
-Uses: External daily plan (day, focus, hook type, CTA rule)
-Guarantees:
-Hook → Body → CTA template
-Topic adherence
-Series continuity
-Academic / expert tone
+* Purpose: Controlled content generation
+* Reads: Auditor + Analyst outputs
+* Uses: External daily plan (day, focus, hook type, CTA rule)
+* Guarantees:
+1. Hook → Body → CTA template
+2. Topic adherence
+3. Series continuity
+4. Academic / expert tone
 
 
 ### 🗂️ Planning & Memory
@@ -96,19 +96,19 @@ Used for variation control, not recall.
 
 
 ### 📚 RAG (Retrieval-Augmented Generation)
-Corpus: Real LinkedIn posts (txt-based, chunked)
-Embeddings: Free embedding service (no OpenAI dependency)
-Retrieval used for pattern grounding, not factual QA
-RAG enriches style and structure, not knowledge.
+* Corpus: Real LinkedIn posts (txt-based, chunked)
+* Embeddings: Free embedding service (no OpenAI dependency)
+* Retrieval used for pattern grounding, not factual QA
+* RAG enriches style and structure, not knowledge.
 
 
 ### ⚙️ Tech Stack
-LangGraph — agent orchestration
-LangChain — LLM abstraction
-Groq LLM — fast inference
-Vector Store — pattern retrieval
-Python — script-based architecture
-uv — execution environment
+* LangGraph — agent orchestration
+* LangChain — LLM abstraction
+* Groq LLM — fast inference
+* Vector Store — pattern retrieval
+* Python — script-based architecture
+* uv — execution environment
 
 
 ### 📦 Project Structure (Simplified)
@@ -152,15 +152,15 @@ Topic
 5 high-quality, coherent LinkedIn posts
 One per day, fully structured
 🎯 Current Status (MVP)
-✔ Multi-agent LangGraph pipeline
-✔ Deterministic planning
-✔ RAG-backed pattern extraction
-✔ Variation control via memory
-✔ Topic-conditioned generation
-✔ Script-based (API-ready)
+* ✔ Multi-agent LangGraph pipeline
+* ✔ Deterministic planning
+* ✔ RAG-backed pattern extraction
+* ✔ Variation control via memory
+* ✔ Topic-conditioned generation
+* ✔ Script-based (API-ready)
 
 
 ### 🧠 Who This Is For
-Agentic AI engineers
-Systems-focused LLM developers
-Anyone who wants control, not demos
+1. Agentic AI engineers
+2. Systems-focused LLM developers
+3. Anyone who wants control, not demos
